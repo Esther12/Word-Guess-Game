@@ -23,11 +23,11 @@ var obj = [
  // This function is run whenever the user presses a key.
 
  document.onkeyup = function(event) {
-
+    //debugger;
     // Determines which key was pressed.
         Guessed = event.key;
 
-        scoreAndCount();
+        
 
         for(let j = 0; j < answerWord.length; j++){
             if(Guessed == answerWord[j]){
@@ -44,6 +44,7 @@ var obj = [
         document.getElementById("rounds").textContent = "Life: " + countLife;
         document.getElementById("marks").textContent = "Score: " + countScore;
         console.log(guessedList);
+        scoreAndCount();
        
     }
 function getRandomInt(max) {
@@ -80,10 +81,15 @@ function scoreAndCount(){
       });
       if(found == undefined){
         guessedList = [];
-        gameNext();
+        setTimeout(function(){
+            alert("Nice Game!!");
+        },200);
+        setTimeout(function(){
+            gameNext();
+        },2000);
         countScore++;
         console.log(guessedList);
-        alert("Nice Game!");
+        
     }else if(guessedList.length > lengthTwo){
         scoreJian();
     }
@@ -100,23 +106,22 @@ function scoreAndCount(){
 //   }
 // }, 1000);
 
-// var count=10;
+var count=5;
 
-// var counter = setInterval(timer, 1000); 
+var counter = setTimeout(timer, 1000); 
 
-// function timer()
-// {
-//     document.getElementById("countdown").innerHTML = count + " seconds remaining";
-//   count=count-1;
-//   if (count <= 0)
-//   {
-//      clearInterval(counter);
-//      //counter ended, do something here
-//      document.getElementById("countdown").innerHTML = "Finished";
-//      return;
-//   }
-//   //Do code for showing the number of seconds here
-// }
+function timer()
+{
+  count=count-1;
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     //counter ended, do something here
+     alert("Nice Game!");
+     return;
+  }
+  //Do code for showing the number of seconds here
+}
 function scoreJian(){
         countLife-- ;
         guessedList = [];
