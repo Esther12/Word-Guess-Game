@@ -33,11 +33,14 @@ var obj = [
             if(Guessed == answerWord[j]){
                 screenWord.splice(j, 1, Guessed);
                 console.log(screenWord);
+                for(let i = 0; i < screenWord.length; i++){
+                    screenWord[i] = screenWord[i].toUpperCase();
+                }
                 document.getElementById("words").textContent = screenWord;
             }
         }
         guessedList+= Guessed;
-        document.getElementById("G-list").textContent = "Guessed List:"+guessedList;
+        document.getElementById("G-list").textContent = "Guessed List:" + guessedList;
         document.getElementById("rounds").textContent = "Life: " + countLife;
         document.getElementById("marks").textContent = "Score: " + countScore;
         console.log(guessedList);
