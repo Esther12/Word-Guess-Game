@@ -7,11 +7,16 @@ var screenWord = [];//Screen
 var countScore;//the score
 var countLife = 6;//the total life
 var obj = [
-    {w:"words0",url:"assets/images/stop watching video.jpg"},
-    {w:"words1",url:"assets/images/tidy.jpg"},
-    {w:"words2",url:"assets/images/travel-tourism.jpg"},
-    {w:"words3",url:"#"},
-    {w:"words4",url:"#"}];
+    {w:"toy",url:"assets/images/Toy.jpg"},
+    {w:"simpsons",url:"assets/images/simpsons.jpeg"},
+    {w:"moana",url:"assets/images/Moana.jpg"},
+    {w:"minnie",url:"assets/images/Minnie.jpeg"},
+    {w:"mickey",url:"assets/images/mickey.jpg"},
+    {w:"pig",url:"assets/images/Lion_King.png"},
+    {w:"dumbo",url:"assets/images/dumbo.jpg"},
+    {w:"cinderella",url:"assets/images/Cinderella.jpg"},
+    {w:"garfield",url:"assets/images/Carfield.jpg"},
+    {w:"family",url:"assets/images/incredible-family.png"}];
 
     gameStart();
     gameNext();
@@ -21,9 +26,6 @@ var obj = [
 
     // Determines which key was pressed.
         Guessed = event.key;
-        
-
-        console.log(Guessed);
 
         scoreAndCount();
 
@@ -35,19 +37,17 @@ var obj = [
             }
         }
         guessedList+= Guessed;
-        document.getElementById("G-list").textContent = guessedList;
+        document.getElementById("G-list").textContent = "Guessed List:"+guessedList;
         document.getElementById("rounds").textContent = "Life: " + countLife;
         document.getElementById("marks").textContent = "Score: " + countScore;
         console.log(guessedList);
        
     }
-
- 
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 function gameNext(){
+    //timer();
     guessedList =[];
     answers = [];
     screenWord = [];
@@ -69,6 +69,7 @@ function gameStart(){
     countScore = 0;
     
 }
+
 function scoreAndCount(){
     let lengthTwo = screenWord.length*2;
     let found = screenWord.find(function(element) {
@@ -81,6 +82,39 @@ function scoreAndCount(){
         console.log(guessedList);
         alert("Nice Game!");
     }else if(guessedList.length > lengthTwo){
+        scoreJian();
+    }
+}
+
+// var timeleft = 20;
+// var downloadTimer = setInterval(function(){
+//   document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+//   timeleft -= 1;
+//   if(timeleft <= 0){
+//     clearInterval(downloadTimer);
+//     document.getElementById("countdown").innerHTML = "Finished";
+//     gameNext();
+//   }
+// }, 1000);
+
+var count=10;
+
+var counter = setInterval(timer, 1000); 
+
+function timer()
+{
+    document.getElementById("countdown").innerHTML = count + " seconds remaining";
+  count=count-1;
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     //counter ended, do something here
+     document.getElementById("countdown").innerHTML = "Finished";
+     return;
+  }
+  //Do code for showing the number of seconds here
+}
+function scoreJian(){
         countLife-- ;
         guessedList = [];
         if(countLife < 0){
@@ -89,5 +123,4 @@ function scoreAndCount(){
         }else{
             gameNext();
         }
-    }
 }

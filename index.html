@@ -10,17 +10,25 @@
 <body>
     <div class="container p-10 m-10">
 
-        <div class="row">
-            <p class="col-6" id="rounds">Life: 6</p>
-            <p class="col-6" id="marks">Score: 0</p>
+        <div class="row mt-5">
+            <p class="col-4 text-center" id="rounds">Life: 6</p>
+            <div class="col-4 text-center" id="#countdown"></div>
+            <p class="col-4 text-center" id="marks">Score: 0</p>
+        </div>
+        <div class="row justify-content-center m-2">
+            <h1 class="justify-content-center">Name Guessing</h1>
         </div>
         <div class="row justify-contant-center">
-            <img id="imgs" src="assets/images/stop watching video.jpg" alt="pic" width="400px" height="350px">
+            <img class="rounded mx-auto d-block" id="imgs" src="#" alt="pic" width="400px" height="350px">
         </div>
-        <div class="row text-center">
-            <h1 id="words" style="letter-spacing: 10px;"></h1>
+        <div class="row justify-content-center">
+            <h1 id="words" class="justify-content-center" style="letter-spacing: 10px;"></h1>
         </div>
-        <p class="row text-center" id="G-list" style="letter-spacing: 10px;"></p>
+        <p class="row text-center" id="G-list" style="letter-spacing: 10px;">Guessed List: </p>
+       <!-- <div class="justify-contant-right">
+            <button class=" btn btn-info justify-contant-right" onclick="scoreAndCount();">Submit!</button>
+       </div> -->
+        
     </div>
     <script type="text/javascript" src="assets/javacript/game.js"></script>
 </body>
