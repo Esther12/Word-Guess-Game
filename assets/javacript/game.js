@@ -100,23 +100,23 @@ function scoreAndCount(){
 //   }
 // }, 1000);
 
-var count=10;
+// var count=10;
 
-var counter = setInterval(timer, 1000); 
+// var counter = setInterval(timer, 1000); 
 
-function timer()
-{
-    document.getElementById("countdown").innerHTML = count + " seconds remaining";
-  count=count-1;
-  if (count <= 0)
-  {
-     clearInterval(counter);
-     //counter ended, do something here
-     document.getElementById("countdown").innerHTML = "Finished";
-     return;
-  }
-  //Do code for showing the number of seconds here
-}
+// function timer()
+// {
+//     document.getElementById("countdown").innerHTML = count + " seconds remaining";
+//   count=count-1;
+//   if (count <= 0)
+//   {
+//      clearInterval(counter);
+//      //counter ended, do something here
+//      document.getElementById("countdown").innerHTML = "Finished";
+//      return;
+//   }
+//   //Do code for showing the number of seconds here
+// }
 function scoreJian(){
         countLife-- ;
         guessedList = [];
